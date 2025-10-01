@@ -1,0 +1,48 @@
+
+
+-- Consulta 1: Listar todos los productos con el nombre de su marca.
+-- Propósito: Demostrar el funcionamiento del JOIN entre Producto y Marca.
+SELECT
+    p.nombre_producto,
+    m.nombre_marca,
+    p.precio,
+    p.stock
+FROM
+    Producto p
+JOIN
+    Marca m ON p.marca_id = m.marca_id;
+
+
+-- Consulta 2: Mostrar los pedidos realizados por un cliente específico (Juan Perez, cliente_id = 1).
+-- Propósito: Demostrar el JOIN entre Cliente y Pedido.
+SELECT
+    pe.pedido_id,
+    pe.fecha_pedido,
+    pe.estado,
+    c.nombre,
+    c.apellido
+FROM
+    Pedido pe
+JOIN
+    Cliente c ON pe.cliente_id = c.cliente_id
+WHERE
+    c.cliente_id = 1;
+
+
+-- Consulta 3 (Avanzada): Calcular el total gastado por cada cliente.
+-- Propósito: Demostrar el uso de JOIN, GROUP BY y funciones de agregación (SUM).
+SELECT
+    c.nombre,
+    c.apellido,
+    COUNT(pe.pedido_id) AS numero_de_pedidos,
+    SUM(dp.cantidad * dp.precio_unitario) AS total_gastado
+FROM
+    Cliente c
+LEFT JOIN
+    Pedido pe ON c.cliente_id = pe.cliente_id
+LEFT JOIN
+    Detalle_Pedido dp ON pe.pedido_id = dp.pedido_id
+GROUP BY
+    c.cliente_id
+ORDER BY
+    total_gastado DESC;
