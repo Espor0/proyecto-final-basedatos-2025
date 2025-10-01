@@ -1,0 +1,50 @@
+
+INSERT INTO Marca (marca_id, nombre_marca) VALUES (1, 'DJI'), (2, 'Autel Robotics'), (3, 'Parrot'), (4, 'Skydio'), (5, 'FIMI');
+
+
+INSERT INTO Cliente (cliente_id, nombre, apellido, email) VALUES
+(1, 'Juan', 'Perez', 'juan.perez@email.com'), (2, 'Maria', 'Garcia', 'maria.garcia@email.com'), (3, 'Carlos', 'Rodriguez', 'carlos.r@email.com'), (4, 'Ana', 'Martinez', 'ana.martinez@email.com'), (5, 'Luis', 'Hernandez', 'luis.h@email.com'),
+(6, 'Laura', 'Lopez', 'laura.lopez@email.com'), (7, 'Jorge', 'Gonzalez', 'jorge.g@email.com'), (8, 'Sofia', 'Diaz', 'sofia.diaz@email.com'), (9, 'David', 'Sanchez', 'david.s@email.com'), (10, 'Elena', 'Gomez', 'elena.gomez@email.com'),
+(11, 'Miguel', 'Torres', 'miguel.t@email.com'), (12, 'Isabel', 'Ramirez', 'isabel.r@email.com'), (13, 'Javier', 'Flores', 'javier.f@email.com'), (14, 'Carmen', 'Morales', 'carmen.m@email.com'), (15, 'Adrian', 'Vargas', 'adrian.v@email.com'),
+(16, 'Raquel', 'Jimenez', 'raquel.j@email.com'), (17, 'Fernando', 'Ruiz', 'fernando.r@email.com'), (18, 'Beatriz', 'Herrera', 'beatriz.h@email.com'), (19, 'Sergio', 'Molina', 'sergio.m@email.com'), (20, 'Paula', 'Castro', 'paula.c@email.com');
+
+
+INSERT INTO Producto (producto_id, nombre_producto, descripcion, precio, stock, marca_id) VALUES
+(101, 'DJI Mavic 3 Pro', 'Cámara Hasselblad 4/3.', 2199.00, 50, 1),
+(102, 'DJI Mini 4 Pro', 'Drone ligero de menos de 249g.', 759.00, 100, 1),
+(201, 'Autel EVO II Pro', 'Cámara 6K y sensor de 1 pulgada.', 1799.00, 30, 2),
+(202, 'Autel EVO Lite+', 'Ideal para condiciones de poca luz.', 1249.00, 45, 2),
+(301, 'Parrot Anafi USA', 'Diseñado para misiones profesionales.', 7000.00, 10, 3),
+(401, 'Skydio 2+', 'Seguimiento de sujeto autónomo.', 1099.00, 40, 4),
+(501, 'FIMI X8 Mini', 'Drone plegable y ultraligero.', 449.00, 80, 5),
+(104, 'DJI Air 3', 'Doble cámara y sensores omnidireccionales.', 1099.00, 60, 1),
+(203, 'Autel Alpha', 'Drone industrial con múltiples cargas útiles.', 12000.00, 5, 2),
+(402, 'Skydio X2', 'Drone para defensa y inspección.', 15000.00, 8, 4);
+
+
+INSERT INTO Pedido (pedido_id, cliente_id, fecha_pedido, estado) VALUES
+(1001, 1, '2025-08-01', 'Entregado'), (1002, 2, '2025-08-05', 'Entregado'), (1003, 1, '2025-08-15', 'Enviado'),
+(1004, 3, '2025-09-01', 'Procesando'),(1005, 4, '2025-09-02', 'Entregado'), (1006, 5, '2025-09-03', 'Enviado'),
+(1007, 2, '2025-09-10', 'Procesando'),(1008, 1, '2025-09-20', 'Procesando'),(1009, 6, '2025-09-21', 'Entregado'),
+(1010, 7, '2025-09-21', 'Entregado'), (1011, 8, '2025-09-22', 'Enviado'),   (1012, 9, '2025-09-22', 'Enviado'),
+(1013, 10, '2025-09-23', 'Entregado'), (1014, 1, '2025-09-23', 'Entregado'), (1015, 2, '2025-09-24', 'Procesando'),
+(1016, 11, '2025-09-24', 'Entregado'),(1017, 12, '2025-09-25', 'Entregado'),(1018, 13, '2025-09-25', 'Enviado'),
+(1019, 14, '2025-09-25', 'Procesando'),(1020, 15, '2025-09-26', 'Entregado'),(1021, 5, '2025-09-26', 'Entregado'),
+(1022, 8, '2025-09-26', 'Enviado'),   (1023, 18, '2025-09-27', 'Enviado'),  (1024, 20, '2025-09-27', 'Entregado'),
+(1025, 19, '2025-09-27', 'Entregado'),(1026, 3, '2025-09-28', 'Procesando'),(1027, 7, '2025-09-28', 'Entregado'),
+(1028, 12, '2025-09-28', 'Enviado'),  (1029, 16, '2025-09-29', 'Procesando'),(1030, 4, '2025-09-30', 'Entregado');
+
+
+INSERT INTO Detalle_Pedido (pedido_id, producto_id, cantidad, precio_unitario) VALUES
+(1001, 101, 1, 2199.00), (1002, 102, 1, 759.00),  (1002, 202, 1, 1249.00), (1003, 201, 1, 1799.00),
+(1004, 301, 2, 7000.00), (1005, 501, 1, 449.00),  (1006, 401, 1, 1099.00), (1007, 102, 2, 759.00),
+(1008, 104, 1, 1388.00), (1009, 203, 1, 12000.00),(1010, 402, 1, 15000.00),(1011, 101, 1, 2199.00),
+(1012, 102, 1, 759.00),  (1013, 501, 3, 449.00),  (1014, 104, 1, 1099.00), (1015, 201, 1, 1799.00),
+(1016, 101, 1, 2199.00), (1017, 102, 1, 759.00),  (1018, 202, 1, 1249.00), (1019, 301, 1, 7000.00),
+(1020, 401, 1, 1099.00), (1021, 501, 1, 449.00),  (1022, 101, 1, 2199.00), (1023, 102, 2, 759.00),
+(1024, 201, 1, 1799.00), (1025, 402, 1, 15000.00),(1026, 104, 1, 1099.00), (1027, 203, 1, 12000.00),
+(1028, 501, 5, 449.00),  (1029, 101, 1, 2199.00), (1030, 102, 1, 759.00),  (1030, 104, 1, 1099.00),
+(1001, 501, 10, 449.00),(1003, 102, 1, 759.00),  (1005, 101, 1, 2199.00), (1007, 201, 2, 1799.00),
+(1009, 301, 1, 7000.00), (1011, 401, 1, 1099.00), (1013, 102, 1, 759.00),  (1015, 104, 1, 1099.00),
+(1017, 202, 1, 1249.00), (1019, 501, 2, 449.00),  (1021, 402, 1, 15000.00),(1023, 203, 1, 12000.00),
+(1025, 101, 1, 2199.00), (1027, 102, 3, 759.00),  (1029, 501, 1, 449.00),  (1030, 201, 1, 1799.00);
